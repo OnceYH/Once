@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Tasks</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  <form (ngSubmint)="addTask()">
+
+  <ion-list>
+  <ion-item>
+    <ion-label floating>workspace</ion-label>
+    <ion-input type="text" #workspace></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>project</ion-label>
+    <ion-input type="text" #project></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>assignee</ion-label>
+    <ion-input type="text" #assignee></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>date</ion-label>
+    <ion-input type="text" #date></ion-input>
+  </ion-item>
+  
+</ion-list>
+</form>
+<div padding>
+  <button block ion-button type="submit" item-left>Create Task</button>
+</div>
+
+</ion-content>

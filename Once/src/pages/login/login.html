@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="assets/imgs/logo.png" class="logo"/>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" #username></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+<div padding>
+  <button block ion-button color="danger" (click)="signInUser()" item-left>Sign In</button>
+  <button clear ion-button color="danger" >Forgot Password?</button>
+</div>
+
+</ion-content>
