@@ -37,16 +37,16 @@ export class LoginPage {
 
   signInUser() {
     //create new session with user details
-    this.fire.auth.signInWithEmailAndPassword(this.user.value,this.password.value)
-    .then (data => {
+    //this.fire.auth.signInWithEmailAndPassword(this.user.value,this.password.value)
+    //.then (data => {
       //just checking the data
-      console.log('got some data: ', data);
+    //  console.log('got some data: ', data);
 
       //this is for checking if email is verified before logging users in
-      var emailVer = this.fire.auth.currentUser.emailVerified;
-      if (emailVer == true)
+    //  var emailVer = this.fire.auth.currentUser.emailVerified;
+    //  if (emailVer == true)
         this.navCtrl.setRoot(HomePage);
-      else
+    /*  else
         this.alert('Email ' + this.user.value + ' is not verified!');
     })
     .catch (error => {
@@ -54,6 +54,6 @@ export class LoginPage {
       console.log('got an error ', error);
       this.alert(error);
     })
-    //this.navCtrl.setRoot(HomePage);
+    //this.navCtrl.setRoot(HomePage);*/
   }
 }

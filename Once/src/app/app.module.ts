@@ -17,6 +17,9 @@ import { TasksPage } from '../pages/tasks/tasks';
 import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegisterPage } from '../pages/register/register';
+import { CalendarPage } from '../pages/calendar/calendar';
+import { TaskModalPage } from '../pages/task-modal/task-modal';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 const firebaseAuth = {
   apiKey: "AIzaSyCM5fQFSC5TGoUNPipLctAI7zdHhZ-cgfQ",
@@ -34,10 +37,13 @@ const firebaseAuth = {
     LoginPage,
     TasksPage,
     WelcomePage,
-    RegisterPage
+    RegisterPage,
+    TaskModalPage,
+    CalendarPage
   ],
   imports: [
     BrowserModule,
+    NgCalendarModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule
@@ -49,7 +55,9 @@ const firebaseAuth = {
     LoginPage,
     TasksPage,
     WelcomePage,
-    RegisterPage
+    RegisterPage,
+    CalendarPage,
+    TaskModalPage
   ],
   providers: [
     StatusBar,
