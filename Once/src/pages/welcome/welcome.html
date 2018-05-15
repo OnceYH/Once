@@ -1,23 +1,37 @@
-<ion-content padding id="welcome">
-  <img src="assets/imgs/logo.png" class="logo"/>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h1>Welcome!</h1>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()">
 
-  <ion-grid >
-    <ion-row>
-      <ion-col center text-center>
-        <button ion-button full color="success" (click)="signup()">Sign up</button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col center text-center>
-        <button ion-button full color="lightText" (click)="login()">Log in</button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-slide>
+      <div class="diag" style="background: url('assets/img/whitebg.svg') no-repeat">
+        <ion-icon ios="ios-analytics" md="md-analytics" color="primary"></ion-icon>
+      </div>
+      <div>
+        <h2>track your routine</h2>
+        <p>whether it's sets, reps, weight used, you can track it all with our intuitive interface.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="diag" style="background: url('assets/img/whitebg.svg') no-repeat">
+        <ion-icon ios="ios-trophy" md="md-trophy" color="primary"></ion-icon>
+      </div>
+      <div>
+        <h2>set personal goals</h2>
+        <p>we're all in the gym for a reason: goals. set goals for diet and fitness.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="diag" style="background: url('assets/img/whitebg.svg') no-repeat">
+        <ion-icon ios="ios-chatboxes" md="md-chatboxes" color="primary"></ion-icon>
+      </div>
+      <div>
+        <h2>chat with others</h2>
+        <p>inspire and help each other reach fitness and diet goals.</p>
+      </div>
+    </ion-slide>
+
+    <button (click)="skip()" id="skip">{{ skipMsg }}</button>
+  </ion-slides>
 </ion-content>
+
