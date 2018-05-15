@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { TasksPage } from '../pages/tasks/tasks';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { SearchPage } from "../pages/search/search";
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,6 +26,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Logout', component: LoginPage},
       { title: 'Tasks', component: TasksPage}
+      { title: 'Search', component: SearchPage}
     ];
 
   }
