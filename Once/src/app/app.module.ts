@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 //angular and firebase auth imports
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,14 +21,15 @@ import { RegisterPage } from '../pages/register/register';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { TaskModalPage } from '../pages/task-modal/task-modal';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { StatsPage } from '../pages/stats/stats';
 
 const firebaseAuth = {
-  apiKey: "AIzaSyCM5fQFSC5TGoUNPipLctAI7zdHhZ-cgfQ",
-  authDomain: "once-88da9.firebaseapp.com",
-  databaseURL: "https://once-88da9.firebaseio.com",
-  projectId: "once-88da9",
-  storageBucket: "once-88da9.appspot.com",
-  messagingSenderId: "266428935769"
+  apiKey: "xxxxxxxxxxxxxxxxxxxx",
+  authDomain: "xxxxxxxxxxxxxxxxxxxxx",
+  databaseURL: "https://xxxxxxxxxxxxxxxx.com",
+  projectId: "xxxxxxxxx",
+  storageBucket: "xxxx-xxxx.appspot.com",
+  messagingSenderId: "xxxxxxx"
 };
 
 @NgModule({
@@ -39,14 +41,16 @@ const firebaseAuth = {
     WelcomePage,
     RegisterPage,
     TaskModalPage,
-    CalendarPage
+    CalendarPage,
+    StatsPage
   ],
   imports: [
     BrowserModule,
     NgCalendarModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,7 +61,8 @@ const firebaseAuth = {
     WelcomePage,
     RegisterPage,
     CalendarPage,
-    TaskModalPage
+    TaskModalPage,
+    StatsPage
   ],
   providers: [
     StatusBar,
