@@ -81,7 +81,8 @@ export class StatsPage {
       0: null,
       1: null,
       2: null,
-      3: null
+      3: null,
+      4: null,
     };
    
     for (let trans of this.chartData) {
