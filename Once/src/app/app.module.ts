@@ -24,12 +24,12 @@ import { NgCalendarModule } from 'ionic2-calendar';
 import { StatsPage } from '../pages/stats/stats';
 
 const firebaseAuth = {
-  apiKey: "xxxxxxxxxxxxxxxxxxxx",
-  authDomain: "xxxxxxxxxxxxxxxxxxxxx",
-  databaseURL: "https://xxxxxxxxxxxxxxxx.com",
-  projectId: "xxxxxxxxx",
-  storageBucket: "xxxx-xxxx.appspot.com",
-  messagingSenderId: "xxxxxxx"
+  apiKey: "AIzaSyCM5fQFSC5TGoUNPipLctAI7zdHhZ-cgfQ",
+  authDomain: "once-88da9.firebaseapp.com",
+  databaseURL: "https://once-88da9.firebaseio.com",
+  projectId: "once-88da9",
+  storageBucket: "once-88da9.appspot.com",
+  messagingSenderId: "266428935769"
 };
 
 @NgModule({

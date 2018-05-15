@@ -1,15 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
-import { AngularFireAuth } from 'angularfire2/auth';
-
-/**
- * Generated class for the WelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//import { AngularFireAuth } from 'angularfire2/auth';
+import { Slides } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -17,7 +11,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
-
+  @ViewChild(Slides) slides: Slides;
+  skipMsg: string = "Skip";
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -25,13 +21,13 @@ export class WelcomePage {
     console.log('ionViewDidLoad WelcomePage');
   }
 
-  login(){
+  skip(){
     //send them to the login page
     this.navCtrl.push(LoginPage);
     }
-  
-    signup(){
-    //send them to the sign-up page
-    this.navCtrl.push(RegisterPage);
+
+    slideChanged() {
+      if (this.slides.isEnd())
+        this.skipMsg = "Alright, I got it";
     }
 }
