@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AsanaAuthProvider } from "../providers/asana-auth"; 
+import { AsanaServiceProvider } from "../providers/asana-service";
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { MyApp } from './app.component';
 
@@ -17,6 +21,9 @@ import { TasksPage } from '../pages/tasks/tasks';
 import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegisterPage } from '../pages/register/register';
+import { ProfileViewPage } from "../pages/profile-view/profile-view";
+import { UserTasksPage } from "../pages/user-tasks/user-tasks";
+import { SearchPage } from "../pages/search/search";
 
 const firebaseAuth = {
   apiKey: "AIzaSyCM5fQFSC5TGoUNPipLctAI7zdHhZ-cgfQ",
@@ -34,13 +41,17 @@ const firebaseAuth = {
     LoginPage,
     TasksPage,
     WelcomePage,
-    RegisterPage
+    RegisterPage,
+    UserTasksPage,
+    ProfileViewPage,
+    SearchPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,7 +60,10 @@ const firebaseAuth = {
     LoginPage,
     TasksPage,
     WelcomePage,
-    RegisterPage
+    RegisterPage,
+    UserTasksPage,
+    ProfileViewPage,
+    SearchPage,
   ],
   providers: [
     StatusBar,
