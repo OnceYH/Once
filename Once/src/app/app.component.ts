@@ -7,12 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { TasksPage } from '../pages/tasks/tasks';
 import { WelcomePage } from '../pages/welcome/welcome';
-<<<<<<< HEAD
 import { SearchPage } from "../pages/search/search";
-=======
 import { CalendarPage } from '../pages/calendar/calendar';
 import { StatsPage } from '../pages/stats/stats';
->>>>>>> 33f2494e9b7026143325ab4df44b38ceddbaf7e1
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -29,16 +27,13 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-<<<<<<< HEAD
       { title: 'Logout', component: LoginPage},
-      { title: 'Tasks', component: TasksPage}
-      { title: 'Search', component: SearchPage}
-=======
+      { title: 'Tasks', component: TasksPage},
+      { title: 'Search', component: SearchPage},
       { title: 'Your Stats', component: StatsPage},
       { title: 'Tasks', component: TasksPage},
       { title: 'Calendar', component: CalendarPage},
       { title: 'Logout', component: LoginPage}
->>>>>>> 33f2494e9b7026143325ab4df44b38ceddbaf7e1
     ];
 
   }
