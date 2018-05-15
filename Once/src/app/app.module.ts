@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AsanaAuthProvider } from "../providers/asana-auth"; 
+import { AsanaServiceProvider } from "../providers/asana-service";
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { MyApp } from './app.component';
 
@@ -18,10 +22,16 @@ import { TasksPage } from '../pages/tasks/tasks';
 import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegisterPage } from '../pages/register/register';
+<<<<<<< HEAD
+import { ProfileViewPage } from "../pages/profile-view/profile-view";
+import { UserTasksPage } from "../pages/user-tasks/user-tasks";
+import { SearchPage } from "../pages/search/search";
+=======
 import { CalendarPage } from '../pages/calendar/calendar';
 import { TaskModalPage } from '../pages/task-modal/task-modal';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { StatsPage } from '../pages/stats/stats';
+>>>>>>> 33f2494e9b7026143325ab4df44b38ceddbaf7e1
 
 const firebaseAuth = {
   apiKey: "AIzaSyCM5fQFSC5TGoUNPipLctAI7zdHhZ-cgfQ",
@@ -40,9 +50,15 @@ const firebaseAuth = {
     TasksPage,
     WelcomePage,
     RegisterPage,
+<<<<<<< HEAD
+    UserTasksPage,
+    ProfileViewPage,
+    SearchPage,
+=======
     TaskModalPage,
     CalendarPage,
     StatsPage
+>>>>>>> 33f2494e9b7026143325ab4df44b38ceddbaf7e1
   ],
   imports: [
     BrowserModule,
@@ -50,7 +66,11 @@ const firebaseAuth = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule,
+<<<<<<< HEAD
+    HttpClientModule,
+=======
     AngularFireDatabaseModule
+>>>>>>> 33f2494e9b7026143325ab4df44b38ceddbaf7e1
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,9 +80,15 @@ const firebaseAuth = {
     TasksPage,
     WelcomePage,
     RegisterPage,
+<<<<<<< HEAD
+    UserTasksPage,
+    ProfileViewPage,
+    SearchPage,
+=======
     CalendarPage,
     TaskModalPage,
     StatsPage
+>>>>>>> 33f2494e9b7026143325ab4df44b38ceddbaf7e1
   ],
   providers: [
     StatusBar,

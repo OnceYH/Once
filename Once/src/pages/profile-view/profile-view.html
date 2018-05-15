@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Profile</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-spinner item-center name="crescent" icon="ripple" #userload *ngIf="isLoading == true"></ion-spinner>
+
+  <ion-list inset *ngIf="isLoading == false">
+
+    <h2>{{ user?.name }}</h2>
+    <h3>{{ userId }}</h3>
+    <h3>{{ user.email }}</h3>
+    <br />
+    <h3>WORKSPACES</h3>
+    <ion-list *ngFor="let workspace of user.workspaces">
+      <h2>{{ workspace.id }}</h2>
+      <h2>{{ workspace.name }}</h2>
+
+    </ion-list>
+   
+
+    <button block ion-button type=submit (click)="ViewTasks(user)">View Tasks</button>
+  </ion-list>
+
+
+</ion-content>
