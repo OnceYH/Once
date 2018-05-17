@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AsanaAuthProvider } from "../providers/asana-auth"; 
 import { AsanaServiceProvider } from "../providers/asana-service";
-import { RouterModule, Routes } from '@angular/router';
+//import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { MyApp } from './app.component';
@@ -29,6 +29,8 @@ import { CalendarPage } from '../pages/calendar/calendar';
 import { TaskModalPage } from '../pages/task-modal/task-modal';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { StatsPage } from '../pages/stats/stats';
+import { UserTasksPage } from '../pages/user-tasks/user-tasks';
+import { DataProvider } from '../providers/data/data';
 
 
 const firebaseAuth = {
@@ -83,7 +85,10 @@ const firebaseAuth = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AsanaAuthProvider,
+    AsanaServiceProvider,
+    DataProvider
   ]
 })
 export class AppModule {}

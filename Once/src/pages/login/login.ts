@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { RegisterPage } from '../register/register';
 
 /**
  * Generated class for the LoginPage page.
@@ -55,5 +56,10 @@ export class LoginPage {
       this.alert(error);
     })
     //this.navCtrl.setRoot(HomePage);*/
+  }
+
+  registerUser()
+  {
+    this.navCtrl.push(RegisterPage);
   }
 }
