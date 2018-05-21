@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { HomePage } from '../home/home';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { RegisterPage } from '../register/register';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the LoginPage page.
@@ -38,16 +39,16 @@ export class LoginPage {
 
   signInUser() {
     //create new session with user details
-    //this.fire.auth.signInWithEmailAndPassword(this.user.value,this.password.value)
-    //.then (data => {
+    this.fire.auth.signInWithEmailAndPassword(this.user.value,this.password.value)
+    .then (data => {
       //just checking the data
-    //  console.log('got some data: ', data);
+      console.log('got some data: ', data);
 
       //this is for checking if email is verified before logging users in
-    //  var emailVer = this.fire.auth.currentUser.emailVerified;
-    //  if (emailVer == true)
-        this.navCtrl.setRoot(HomePage);
-    /*  else
+      var emailVer = this.fire.auth.currentUser.emailVerified;
+      if (emailVer == true)
+        this.navCtrl.setRoot(ProfilePage);
+      else
         this.alert('Email ' + this.user.value + ' is not verified!');
     })
     .catch (error => {
@@ -55,7 +56,7 @@ export class LoginPage {
       console.log('got an error ', error);
       this.alert(error);
     })
-    //this.navCtrl.setRoot(HomePage);*/
+    //this.navCtrl.setRoot(HomePage);
   }
 
   registerUser()

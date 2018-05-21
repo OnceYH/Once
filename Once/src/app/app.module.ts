@@ -31,16 +31,18 @@ import { NgCalendarModule } from 'ionic2-calendar';
 import { StatsPage } from '../pages/stats/stats';
 import { UserTasksPage } from '../pages/user-tasks/user-tasks';
 import { DataProvider } from '../providers/data/data';
+import { ProfilePage } from '../pages/profile/profile';
 
 
 const firebaseAuth = {
-  apiKey: "AIzaSyCM5fQFSC5TGoUNPipLctAI7zdHhZ-cgfQ",
-  authDomain: "once-88da9.firebaseapp.com",
-  databaseURL: "https://once-88da9.firebaseio.com",
-  projectId: "once-88da9",
-  storageBucket: "once-88da9.appspot.com",
-  messagingSenderId: "266428935769"
+  apiKey: "AIzaSyCDjeIECJNKIvj30AUNANMCucrXBdWK3hk",
+    authDomain: "onceapp2018.firebaseapp.com",
+    databaseURL: "https://onceapp2018.firebaseio.com",
+    projectId: "onceapp2018",
+    storageBucket: "onceapp2018.appspot.com",
+    messagingSenderId: "470210467297"
 };
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ const firebaseAuth = {
     SearchPage,
     TaskModalPage,
     CalendarPage,
-    StatsPage
+    StatsPage,
+    ProfilePage
 
   ],
   imports: [
@@ -80,7 +83,8 @@ const firebaseAuth = {
     SearchPage,
     CalendarPage,
     TaskModalPage,
-    StatsPage
+    StatsPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

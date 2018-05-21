@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { FlashCardComponent } from './flash-card/flash-card';
+
 @NgModule({
-	declarations: [FlashCardComponent],
+	declarations: [],
 	imports: [],
-	exports: [FlashCardComponent]
+	exports: []
 })
 export class ComponentsModule {}
