@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Profile } from '../../models/profile';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { HomePage } from '../home/home';
-
+import { Camera , CameraOptions} from '@ionic-native/camera';
+import { ImageProvider } from '../../providers/image/image';
+import { ProfileViewPage } from '../profile-view/profile-view';
 
 @IonicPage()
 @Component({
@@ -14,20 +16,28 @@ import { HomePage } from '../home/home';
 export class ProfilePage {
 
   profile = {} as Profile;
+  imageUrls = [];
+  private images = [];
 
-  constructor(private afDatabase: AngularFireDatabase, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    private camera: Camera,
+    private afDatabase: AngularFireDatabase,
+    private afAuth: AngularFireAuth,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private imageSrv: ImageProvider) 
+    { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
 
+
   createProfile()
   {
-    console.log("hello world");
     this.afAuth.authState.take(1).subscribe(auth => {
-      this.afDatabase.object(`profile/${auth.uid}`).set(this.profile)
-      .then(() => this.navCtrl.setRoot(HomePage));
+      this.afDatabase.object(`users/${auth.uid}`).update(this.profile)
+      .then(() => this.navCtrl.setRoot(ProfileViewPage));
     })
   }
 

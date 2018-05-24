@@ -11,7 +11,7 @@ import { MyApp } from './app.component';
 //angular and firebase auth imports
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,6 +32,8 @@ import { StatsPage } from '../pages/stats/stats';
 import { UserTasksPage } from '../pages/user-tasks/user-tasks';
 import { DataProvider } from '../providers/data/data';
 import { ProfilePage } from '../pages/profile/profile';
+import { Camera } from '@ionic-native/camera';
+import { ImageProvider } from '../providers/image/image';
 
 
 const firebaseAuth = {
@@ -92,7 +94,9 @@ const firebaseAuth = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AsanaAuthProvider,
     AsanaServiceProvider,
-    DataProvider
+    DataProvider,
+    Camera,
+    ImageProvider
   ]
 })
 export class AppModule {}

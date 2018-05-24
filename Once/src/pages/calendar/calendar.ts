@@ -23,10 +23,11 @@ export class CalendarPage {
     mode: 'month',
     currentDate: this.selectedDay
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, private alertCtrl: AlertController) 
-  {
-
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private modalCtrl: ModalController,
+    private alertCtrl: AlertController) { }
 
   ionViewDidLoad() 
   {

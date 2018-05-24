@@ -1,13 +1,19 @@
 <ion-header>
-
   <ion-navbar color="primary">
-    <ion-title>profile</ion-title>
+    <ion-title>Update Profile</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-grid>
+      <ion-row>
+        <ion-col col-12 col-sm-4 col-md-3 col-lg-2 *ngFor="let image of imageUrls">
+          <img [src]="image" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
   <ion-item>
     <ion-label floating>Username</ion-label>
@@ -22,6 +28,47 @@
   <ion-item>
     <ion-label floating>Last Name</ion-label>
     <ion-input [(ngModel)]="profile.lastName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>Department</ion-label>
+      <ion-select [(ngModel)]="profile.Department">
+        <ion-option>Reservations</ion-option>
+        <ion-option>Marketing</ion-option>
+        <ion-option>Housekeeping</ion-option>
+        <ion-option>Reception</ion-option>
+        <ion-option>Management</ion-option>
+        <ion-option>Maintenance</ion-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Location</ion-label>
+    <ion-select [(ngModel)]="profile.location">
+        <ion-option>Head Office</ion-option>
+        <ion-option>Cape Town</ion-option>
+        <ion-option>Johannesburg</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>Tell us about yourself</ion-label>
+      <ion-input [(ngModel)]="profile.bio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>What's your favourite quote?</ion-label>
+      <ion-input [(ngModel)]="profile.quote"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>If you had to have dinner with a celebrity, who would it be?</ion-label>
+      <ion-input [(ngModel)]="profile.dinner"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>Hobbies</ion-label>
+      <ion-input [(ngModel)]="profile.hobby"></ion-input>
   </ion-item>
 
   <button ion-button clear block (click)="createProfile()">Create Profile</button>

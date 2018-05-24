@@ -10,6 +10,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { SearchPage } from "../pages/search/search";
 import { CalendarPage } from '../pages/calendar/calendar';
 import { StatsPage } from '../pages/stats/stats';
+import { ProfilePage } from '../pages/profile/profile';
+import { ProfileViewPage } from '../pages/profile-view/profile-view';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,14 +23,16 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      //{ title: 'Logout', component: LoginPage},
-      { title: 'Tasks', component: TasksPage},
+      { title: 'Profile', component: ProfileViewPage},
       { title: 'Search', component: SearchPage},
       { title: 'Your Stats', component: StatsPage},
       { title: 'Tasks', component: TasksPage},

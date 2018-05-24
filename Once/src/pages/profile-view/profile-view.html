@@ -1,31 +1,27 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
       <ion-title>Profile</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="updateProfile()">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-buttons>
     </ion-navbar>
-</ion-header>
+  </ion-header>>
+
+
 <ion-content padding>
 
-  <ion-spinner item-center name="crescent" icon="ripple" #userload *ngIf="isLoading == true"></ion-spinner>
-
-  <ion-list inset *ngIf="isLoading == false">
-
-    <h2>{{ user?.name }}</h2>
-    <h3>{{ userId }}</h3>
-    <h3>{{ user.email }}</h3>
-    <br />
-    <h3>WORKSPACES</h3>
-    <ion-list *ngFor="let workspace of user.workspaces">
-      <h2>{{ workspace.id }}</h2>
-      <h2>{{ workspace.name }}</h2>
-
-    </ion-list>
-   
-
-    <button block ion-button type=submit (click)="ViewTasks(user)">View Tasks</button>
-  </ion-list>
-
-
+  <p>Username : {{(profileData | async)?.username}}</p>
+  <p>First Name : {{(profileData | async)?.firstName}}</p>
+  <p>Last Name : {{(profileData | async)?.lastName}}</p>
+  <p>Bio : {{(profileData | async)?.bio}}</p>
+  <p>Hobbies : {{(profileData | async)?.hobby}}</p>
+  <p>Location : {{(profileData | async)?.location}}</p>
+  <p>Favourite Quote : {{(profileData | async)?.quote}}</p>
+  <p>Department : {{(profileData | async)?.Department}}</p>
+  <p>If i had to have dinner with a celeb it would be : {{(profileData | async)?.dinner}}</p>
 </ion-content>

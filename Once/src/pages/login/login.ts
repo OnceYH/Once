@@ -47,7 +47,7 @@ export class LoginPage {
       //this is for checking if email is verified before logging users in
       var emailVer = this.fire.auth.currentUser.emailVerified;
       if (emailVer == true)
-        this.navCtrl.setRoot(ProfilePage);
+        this.navCtrl.setRoot(HomePage);
       else
         this.alert('Email ' + this.user.value + ' is not verified!');
     })

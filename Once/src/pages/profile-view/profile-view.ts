@@ -1,49 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AsanaServiceProvider } from "../../providers/asana-service";
 import { UserTasksPage } from '../user-tasks/user-tasks';
+import { Profile } from '../../models/profile';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+import { ProfilePage } from '../profile/profile';
 
 @IonicPage()
 @Component({
   selector: 'page-profile-view',
   templateUrl: 'profile-view.html',
 })
-export class ProfileViewPage implements OnInit {
+export class ProfileViewPage {
 
+  profileData: FirebaseObjectObservable<Profile>
 
-  private isLoading : boolean = true;
-  userId: any;
-  user: any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public asanaServiceProvider: AsanaServiceProvider) {
-    this.userId = navParams.get('userId');
-  }
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    var temp = this;
-    setTimeout(function() {
-      temp.DisplayData(temp.userId).then(result => {
-        temp.isLoading = false;
-      });
-    }, 1500);
-  }
-
-  ViewTasks(user) {
-    this.navCtrl.push(UserTasksPage, 
-      {'workspaceId' : user.workspaces[0].id, 'userId': user.id });
+  constructor(
+    private afDatabase: AngularFireDatabase,
+    private toast: ToastController,
+    private afAuth: AngularFireAuth, 
+    public navCtrl: NavController, 
+    public navParams: NavParams,) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfileViewPage');
+    this.afAuth.authState.take(1).subscribe(data => {
+      if (data && data.email && data.uid) {
+      
+        this.profileData = this.afDatabase.object(`users/${data.uid}`)
+      }
+      else {
+        //
+      }
+    })
   }
 
-  async DisplayData(userId) {
-    await this.asanaServiceProvider.getUserData(userId)
-    .then(data => {
-      this.user = data;
-    })
+  updateProfile()
+  {
+    this.navCtrl.push(ProfilePage)
   }
 
 }
