@@ -9,18 +9,17 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Search</ion-title>
+    <ion-title>Team</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-spinner name="crescent" #userload *ngIf="isLoading == true"></ion-spinner>
+  <!--<ion-spinner name="crescent" #userload *ngIf="isLoading == true"></ion-spinner>-->
 
-  <ion-list inset *ngIf="isLoading == false">
-    <ion-item *ngFor="let user of users" (click)='gotoProfile(user.id)'>
-      <h2>{{user.name}}</h2>
-      <br/>
+  <ion-list>
+    <ion-item *ngFor="let profile of profileData | async">
+        <p>{{profile.firstName}} {{profile.lastName}}</p>
     </ion-item>
   </ion-list>
 </ion-content>

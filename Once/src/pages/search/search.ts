@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AsanaServiceProvider } from "../../providers/asana-service";
 import { ProfileViewPage } from '../profile-view/profile-view';
+import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { Profile } from '../../models/profile'
+import { AngularFireAuth } from 'angularfire2/auth';
+import { UsersProvider } from '../../providers/users/users'
+
 
 /**
  * Generated class for the SearchPage page.
@@ -17,32 +21,19 @@ import { ProfileViewPage } from '../profile-view/profile-view';
 })
 export class SearchPage {
 
-  users: any;
-  private isLoading : boolean = true;
+  profileData: FirebaseListObservable<any[]>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public asanaServiceProvider: AsanaServiceProvider) {
-    var temp = this;
-    setTimeout(function() {
-      temp.getUsers()
-      .then(result => {
-        temp.isLoading = false;
-      }); 
-    }, 2000);
+  constructor(private _usersProv: UsersProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.profileData = _usersProv.getUsers();
   }
 
+  /*getUsers(){
+    return this.profileData;
+  }*/
+  
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
+   console.log(this.profileData);
   }
   
-  gotoProfile(userId) {
-    this.navCtrl.push(ProfileViewPage, { 'userId' : userId });
-  }
-
-  async getUsers(){
-    await this.asanaServiceProvider.getUsers()
-    .then(data => {
-      this.users = data;
-    }); 
-  }
 
 }

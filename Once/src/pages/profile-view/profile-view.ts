@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { AsanaServiceProvider } from "../../providers/asana-service";
-import { UserTasksPage } from '../user-tasks/user-tasks';
 import { Profile } from '../../models/profile';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
