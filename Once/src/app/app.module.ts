@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-//import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { MyApp } from './app.component';
@@ -9,7 +8,7 @@ import { MyApp } from './app.component';
 //angular and firebase auth imports
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
-import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,6 +20,7 @@ import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegisterPage } from '../pages/register/register';
 import { ProfileViewPage } from "../pages/profile-view/profile-view";
+//import { UserTasksPage } from "../pages/user-tasks/user-tasks";
 import { SearchPage } from "../pages/search/search";
 import { CalendarPage } from '../pages/calendar/calendar';
 import { TaskModalPage } from '../pages/task-modal/task-modal';
@@ -30,7 +30,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { Camera } from '@ionic-native/camera';
 import { ImageProvider } from '../providers/image/image';
 import { UsersProvider } from '../providers/users/users';
-
+import { MultiProfilePage } from '../pages/multi-profile/multi-profile';
 
 const firebaseAuth = {
   apiKey: "AIzaSyCDjeIECJNKIvj30AUNANMCucrXBdWK3hk",
@@ -55,7 +55,8 @@ const firebaseAuth = {
     TaskModalPage,
     CalendarPage,
     StatsPage,
-    ProfilePage
+    ProfilePage,
+    MultiProfilePage
 
   ],
   imports: [
@@ -80,7 +81,8 @@ const firebaseAuth = {
     CalendarPage,
     TaskModalPage,
     StatsPage,
-    ProfilePage
+    ProfilePage,
+    MultiProfilePage
   ],
   providers: [
     StatusBar,
@@ -89,7 +91,7 @@ const firebaseAuth = {
     Camera,
     ImageProvider,
     UsersProvider,
-    UsersProvider
+    AngularFireDatabaseProvider
   ]
 })
 export class AppModule {}

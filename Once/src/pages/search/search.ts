@@ -5,14 +5,7 @@ import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable }
 import { Profile } from '../../models/profile'
 import { AngularFireAuth } from 'angularfire2/auth';
 import { UsersProvider } from '../../providers/users/users'
-
-
-/**
- * Generated class for the SearchPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { MultiProfilePage } from '../multi-profile/multi-profile';
 
 @IonicPage() 
 @Component({
@@ -22,17 +15,24 @@ import { UsersProvider } from '../../providers/users/users'
 export class SearchPage {
 
   profileData: FirebaseListObservable<any[]>
-
+  //profileData2: any[]
   constructor(private _usersProv: UsersProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.profileData = _usersProv.getUsers();
+   
   }
 
-  /*getUsers(){
-    return this.profileData;
-  }*/
+  viewProfile(profile)
+  {
+    console.log(profile.firstName);
+
+    this.navCtrl.push(MultiProfilePage, {
+      data: profile
+    });
+  }
   
+
   ionViewDidLoad() {
-   console.log(this.profileData);
+   console.log("loaded");
   }
   
 

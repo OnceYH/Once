@@ -1,28 +1,46 @@
 <ion-header>
-    <ion-navbar color="primary">
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="updateProfile()">
+        <ion-icon name="create"></ion-icon>
       </button>
-      <ion-title>Profile</ion-title>
-      <ion-buttons end>
-        <button ion-button (click)="updateProfile()">
-          <ion-icon name="create"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-navbar>
-  </ion-header>>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
 
-<ion-content padding>
+<ion-content>
+<div class="top">
+    <br>
+  <div class="profile-picture big-profile-picture">
+    <img src="../../assets/imgs/default.png" id="img">
+  </div>
+  
+  <h2>{{(profileData | async)?.firstName}} {{(profileData | async)?.lastName}}</h2>
+  <div class="sub-details">
+    <h5>{{(profileData | async)?.Department}}</h5>
+    <h5>{{(profileData | async)?.location}}</h5>
+  </div>
+</div>
 
-  <p>Username : {{(profileData | async)?.username}}</p>
-  <p>First Name : {{(profileData | async)?.firstName}}</p>
-  <p>Last Name : {{(profileData | async)?.lastName}}</p>
-  <p>Bio : {{(profileData | async)?.bio}}</p>
-  <p>Hobbies : {{(profileData | async)?.hobby}}</p>
-  <p>Location : {{(profileData | async)?.location}}</p>
-  <p>Favourite Quote : {{(profileData | async)?.quote}}</p>
-  <p>Department : {{(profileData | async)?.Department}}</p>
-  <p>If I had to have dinner with a celeb it would be : {{(profileData | async)?.dinner}}</p>
+<div class="bottom">
+
+  <h4>About Me</h4>
+  <p>{{(profileData | async)?.bio}}</p>
+
+  <h4>Hobbies</h4>
+  <p>{{(profileData | async)?.hobby}}</p>
+
+  <h4>Favourite Quote</h4>
+  <p>{{(profileData | async)?.quote}}</p>
+
+  <h4>Celebrity Dinner Guest</h4>
+  <p>{{(profileData | async)?.dinner}}</p>
+</div>
+
 
 </ion-content>

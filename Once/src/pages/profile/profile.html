@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
     <ion-title>Update Profile</ion-title>
   </ion-navbar>
 </ion-header>
@@ -8,30 +11,30 @@
 <ion-content padding>
 
   <ion-grid>
-      <ion-row>
-        <ion-col col-12 col-sm-4 col-md-3 col-lg-2 *ngFor="let image of imageUrls">
-          <img [src]="image" />
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm-4 col-md-3 col-lg-2 *ngFor="let image of imageUrls">
+        <img [src]="image" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input [(ngModel)]="profile.username"></ion-input>
+    <ion-label>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="profile.username" ></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>First Name</ion-label>
-    <ion-input [(ngModel)]="profile.firstName"></ion-input>
+    <ion-label>First Name</ion-label>
+    <ion-input type="text" [(ngModel)]="profile.firstName"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Last Name</ion-label>
+    <ion-label>Last Name</ion-label>
     <ion-input [(ngModel)]="profile.lastName"></ion-input>
   </ion-item>
 
   <ion-item>
-      <ion-label floating>Department</ion-label>
+      <ion-label >Department</ion-label>
       <ion-select [(ngModel)]="profile.Department">
         <ion-option>Reservations</ion-option>
         <ion-option>Marketing</ion-option>
@@ -43,7 +46,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Location</ion-label>
+    <ion-label >Location</ion-label>
     <ion-select [(ngModel)]="profile.location">
         <ion-option>Head Office</ion-option>
         <ion-option>Cape Town</ion-option>

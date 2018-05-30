@@ -123,7 +123,7 @@ export class StatsPage {
         labels: Object.keys(this.months).map(a => this.months[a].name),
         datasets: [{
           data: chartData,
-          backgroundColor: '#32db64'
+          backgroundColor: '#DA2128'
         }]
       },
       options: {

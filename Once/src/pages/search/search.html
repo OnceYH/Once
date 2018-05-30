@@ -16,10 +16,10 @@
 
 <ion-content padding>
   <!--<ion-spinner name="crescent" #userload *ngIf="isLoading == true"></ion-spinner>-->
-
   <ion-list>
-    <ion-item *ngFor="let profile of profileData | async">
-        <p>{{profile.firstName}} {{profile.lastName}}</p>
-    </ion-item>
+    <button ion-item *ngFor="let profile of profileData | async" (click)="viewProfile(profile)">
+        <h4>{{profile.firstName}} {{profile.lastName}}</h4>
+        <h6>{{profile.location}}</h6>
+    </button >
   </ion-list>
 </ion-content>
