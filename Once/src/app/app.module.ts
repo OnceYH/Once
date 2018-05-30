@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 //angular and firebase auth imports
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
-import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database-deprecated';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

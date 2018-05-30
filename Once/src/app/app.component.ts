@@ -40,7 +40,7 @@ export class MyApp implements OnInit{
     this.pages = [
       { title: 'HOME', component: HomePage },
       { title: 'TEAM', component: SearchPage},
-      { title: 'STATS', component: StatsPage},
+      //{ title: 'STATS', component: StatsPage},
       { title: 'TASKS', component: TasksPage},
       { title: 'CALENDAR', component: CalendarPage},
     ];
@@ -58,7 +58,6 @@ export class MyApp implements OnInit{
   logout() {    
     this.nav.setRoot(LoginPage);
     this.afAuth.auth.signOut();
-    this.nav.popAll();
   }
 
   initializeApp() {
