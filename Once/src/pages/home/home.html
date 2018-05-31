@@ -7,12 +7,26 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Home</h3>
+<ion-content >
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <div class="home">
+    <img class="bg-image" src="https://res.cloudinary.com/dvv9fvblr/image/upload/v1516887286/once/images/pages/home/fqxrje2gz5n86jo4vkw0.jpg">
+    <div class="home-text">
+      <h3> Welcome home </h3>
+      <h2>{{(profileData | async)?.firstName}}</h2>
+    </div>
+  </div> 
+  
+  <div class="comingsoon">
+    <h2 style="text-align: center">WATCH THIS SPACE</h2>
+  </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-slides class="image-slider" loop="true" slidesPerView="2">
+    <ion-slide *ngFor="let img of images">
+      <img src="{{img}}" class="thumb-img" imageViewer/>
+    </ion-slide>
+  </ion-slides>
+
+  
+  
 </ion-content>

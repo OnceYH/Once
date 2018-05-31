@@ -7,33 +7,29 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { UsersProvider } from '../../providers/users/users'
 import { MultiProfilePage } from '../multi-profile/multi-profile';
 
-@IonicPage() 
+@IonicPage()
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html',
 })
+
 export class SearchPage {
 
   profileData: FirebaseListObservable<any[]>
   //profileData2: any[]
   constructor(private _usersProv: UsersProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.profileData = _usersProv.getUsers();
-   
   }
 
-  viewProfile(profile)
-  {
+  viewProfile(profile) {
     console.log(profile.firstName);
 
     this.navCtrl.push(MultiProfilePage, {
       data: profile
     });
   }
-  
 
   ionViewDidLoad() {
-   console.log("loaded");
+    console.log("loaded");
   }
-  
-
 }

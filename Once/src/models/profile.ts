@@ -7,4 +7,5 @@ export interface Profile {
     bio: string;
     quote: string;
     dinner: string;
+    hobby: string;
 }

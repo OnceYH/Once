@@ -1,40 +1,47 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{profileData.firstName}}'s Profile</ion-title>
-  </ion-navbar>
+
+<ion-navbar color="primary">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>{{profileData.firstName}}'s Profile</ion-title>
+</ion-navbar>
+
 </ion-header>
 
-
 <ion-content>
-<div class="top">
-    <br>
-  <div class="profile-picture big-profile-picture">
-    <img src="../../assets/imgs/default.png" id="img">
-  </div>
-  
-  <h2>{{profileData.firstName}} {{profileData.lastName}}</h2>
+  <div class="top">
+    <img class="profbg-image" src="https://res.cloudinary.com/dvv9fvblr/image/upload/v1524495673/once/images/upload_header_images/lcf6skkrkmkbi18m8h4u.png">
+
+    <div class="main">
+      <div class="profile-picture big-profile-picture">
+        <img src="../../assets/imgs/default.png" id="img">
+      </div>
+
+    <h2>{{profileData.firstName}} {{profileData.lastName}}</h2>
+    </div>
   <div class="sub-details">
     <h5>{{profileData.Department}}</h5>
-    <h5>{{profileDatalocation}}</h5>
+    <h5>{{profileData.location}}</h5>
   </div>
 </div>
+
+
 
 <div class="bottom">
 
   <h4>About Me</h4>
   <p>{{profileData.bio}}</p>
-
+  
   <h4>Hobbies</h4>
   <p>{{profileData.hobby}}</p>
-
+  
   <h4>Favourite Quote</h4>
   <p>{{profileData.quote}}</p>
 
   <h4>Celebrity Dinner Guest</h4>
   <p>{{profileData.dinner}}</p>
+
 </div>
 
 </ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Users Tasks</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-spinner name="crescent" icon="ripple" #userload *ngIf="isLoading == true"></ion-spinner>
+<ion-content padding *ngIf="isLoading == false">
+
+  <h3>{{ userId }}</h3>
+  <h3>{{ workspaceId }}</h3>
+  <ion-list *ngFor="let task of taskData">
+    {{task.name}}
+    {{task.id}}
+    <br/>
+  </ion-list>
+
+  <button block ion-button type=submit (click)="AddTask(user)">Add Task</button>
+</ion-content>

@@ -1,21 +1,20 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Team</ion-title>
-  </ion-navbar>
+
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button> 
+      <ion-title>Team</ion-title>  
+    </ion-navbar>
+  
 </ion-header>
-
-
+  
 <ion-content padding>
-  <!--<ion-spinner name="crescent" #userload *ngIf="isLoading == true"></ion-spinner>-->
-  <ion-list>
-    <button ion-item *ngFor="let profile of profileData | async" (click)="viewProfile(profile)">
-      <div>
-        <h4>{{profile.firstName}} {{profile.lastName}}</h4>
-        <h6>{{profile.location}}</h6>
-      </div>
-    </button >
-  </ion-list>
-</ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let profile of profileData | async" (click)="viewProfile(profile)">
+          <img item-start class="searchpic" src="../../assets/imgs/default.png" />
+          <h4>{{profile.firstName}} {{profile.lastName}}</h4>
+          <h6>{{profile.location}}</h6>
+      </button >
+    </ion-list>
+  </ion-content>

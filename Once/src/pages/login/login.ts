@@ -4,6 +4,7 @@ import { HomePage } from '../home/home';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { RegisterPage } from '../register/register';
 import { ProfilePage } from '../profile/profile';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,6 +20,8 @@ import { ProfilePage } from '../profile/profile';
 })
 export class LoginPage {
 
+  public type = 'password';
+  public showPass = false;
   @ViewChild('username') user;
   @ViewChild('password') password;
 
@@ -27,6 +30,17 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  showPassword() {
+    this.showPass = !this.showPass;
+
+    if (this.showPass) {
+      this.type = 'text';
+    }
+    else {
+      this.type= 'password';
+    }
   }
 
   alert(message: string){
@@ -47,12 +61,11 @@ export class LoginPage {
       //this is for checking if email is verified before logging users in
       var emailVer = this.fire.auth.currentUser.emailVerified;
       if (emailVer == true)
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(HomePage, data);
       else
         this.alert('Email ' + this.user.value + ' is not verified!');
     })
     .catch (error => {
-      //catch errors if the dumbfuck chooses to type in bullshit
       console.log('got an error ', error);
       this.alert(error);
     })

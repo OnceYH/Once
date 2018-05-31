@@ -8,20 +8,8 @@
 </ion-header>
 
 
-<ion-content padding>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col col-12 col-sm-4 col-md-3 col-lg-2 *ngFor="let image of imageUrls">
-        <img [src]="image" />
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-item>
-    <ion-label>Username</ion-label>
-    <ion-input type="text" [(ngModel)]="profile.username" ></ion-input>
-  </ion-item>
+<ion-content padding style="text-align: center" >
+  <h2>Enter your details</h2>
 
   <ion-item>
     <ion-label>First Name</ion-label>
@@ -70,10 +58,10 @@
   </ion-item>
 
   <ion-item>
-      <ion-label floating>Hobbies</ion-label>
+      <ion-label floating>Interests</ion-label>
       <ion-input [(ngModel)]="profile.hobby"></ion-input>
   </ion-item>
 
-  <button ion-button clear block (click)="createProfile()">Create Profile</button>
+  <button ion-button clear block (click)="createProfile()">Update Profile</button>
 
 </ion-content>

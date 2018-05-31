@@ -68,6 +68,7 @@ export class MyApp implements OnInit{
       this.splashScreen.hide();
       this.afAuth.authState.take(1).subscribe(data => {
         if (data && data.email && data.uid) {
+          console.log("Loading menu");
           this.profileData = this.afDatabase.object(`users/${data.uid}`);
         }
         else {
@@ -76,7 +77,8 @@ export class MyApp implements OnInit{
       })
     });
   }
-  
+
+
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario

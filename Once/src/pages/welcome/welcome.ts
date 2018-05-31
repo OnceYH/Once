@@ -2,8 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
-//import { AngularFireAuth } from 'angularfire2/auth';
+
 import { Slides } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -12,9 +13,10 @@ import { Slides } from 'ionic-angular';
 })
 export class WelcomePage {
   @ViewChild(Slides) slides: Slides;
-  skipMsg: string = "Skip";
+  skipMsg: string = "Let's go!";
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
